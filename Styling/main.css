@@ -1,0 +1,433 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Work Sans', sans-serif;
+}
+/* Start Variables */
+:root {
+  --main-color: #10CAB7;
+  --secondary-color: #2C4755;
+  --background-color: #f6f6f6;
+  --paragraph-color: #777777;
+  --head-lines: #ebeced;
+  --head-paragraph: #797979;
+}
+/* End Variables */
+/* Start Components */
+.head-sec {
+  color: var(--head-lines);
+  font-size: 100px;
+  font-weight: 800;
+  letter-spacing: -4px;
+}
+.head-paragraph {
+  color: var(--head-paragraph);
+  font-size: 20px;
+  font-weight: 400;
+}
+/* End Components */
+/* Start The Header */
+header {
+  height: 8vh;
+  position: relative;
+}
+.logo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 4px solid var(--main-color);
+  position: absolute;
+  top: 30%;
+  left: 13%;
+}
+.logo::before {
+  content: "";
+  width: 4px;
+  height: 22px;
+  background-color: #24484F;
+  position: absolute;
+  top: -25%;
+  left: -15px;
+}
+.menu-btn {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 35px;
+  height: 14px;
+  position: absolute;
+  top: 22%;
+  right: 15%;
+}
+.menu-btn-burger {
+  width: 50%;
+  height: 1.6px;
+  background-color: #000000;
+  transition: all 0.7s ease;
+}
+.menu-btn:hover .menu-btn-burger {
+  width: 100%;
+}
+.menu-btn-burger::before,
+.menu-btn-burger::after {
+  content: "";
+  width: 100%;
+  background-color: #000000;
+  position: absolute;
+  right: 0;
+}
+.menu-btn-burger::before {
+  height: 1.8px;
+  top: 0;
+}
+.menu-btn-burger::after {
+  height: 2.5px;
+  top: 100%;
+}
+.drop-menu {
+  display: none;
+  width: 15%;
+  background-color: #F6F6F6;
+  border-top: 20px solid #ffffff;
+  position: absolute;
+  top: 50%;
+  right: 15%;
+}
+.drop-menu::before {
+  content: "";
+  display: none;
+  width: 0px;
+  height: 0px;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 16px solid #F6F6F6;
+  position: absolute;
+  top: -6%;
+  right: 1%;
+}
+.menu-btn:hover + .drop-menu,
+.menu-btn:hover + .drop-menu::before,
+.drop-menu:hover,
+.drop-menu:hover::before {
+  display: initial;
+}
+.drop-menu a {
+  display: inline-block;
+  text-decoration: none;
+  width: 100%;
+  color: #000000;
+  padding: 18px;
+  transition: all 0.35s ease;
+}
+.drop-menu a:hover {
+  padding-left: 30px;
+}
+.drop-menu ul {
+  list-style: none;
+}
+.drop-menu ul hr {
+  border: none;
+  border-bottom: 1.5px solid #DDDDDD;
+}
+/* End The Header */
+/* Start Langing Page */
+.langing-page {
+  height: 92vh;
+  background-image: url("../images/landing.jpg");
+  background-size: cover;
+}
+.langing-page div {
+  width: 300px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.head-line {
+  color: var(--main-color);
+  font-size: 50px;
+}
+.langing-page div p {
+  color: #000000;
+  font-size: 19px;
+  line-height: 34px;
+}
+/* End Langing Page */
+/* Start Information Section */
+.inform-sec {
+  height: 55vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: var(--background-color);
+}
+.inform-sec div {
+  width: 20%;
+  height: 70%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  text-align: center;
+}
+.icon {
+  color: var(--main-color);
+  font-size: 48px;
+}
+.inform-sec div h2 {
+  font-size: 19px;
+}
+.inform-sec div p {
+  color: var(--paragraph-color);
+  font-size: 17px;
+  line-height: 31px;
+  word-break: break-word;
+}
+/* End Information Section */
+/* Start Services Section */
+.services-sec {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: 20% repeat(2, auto);
+  justify-content: center;
+}
+.services-sec div:first-child {
+  grid-column: span 3;
+  text-align: center;
+  position: relative;
+}
+.services-sec div:first-child .head-paragraph {
+  position: absolute;
+  top: 70%;
+  left: 38.5%;
+}
+.services-sec div:first-child .head-sec {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.services-sec div:nth-child(4) {
+  grid-row: span 2;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.services-sec .mountain-view {
+  width: 70%;
+  height: 65%;
+}
+.services-sec div:nth-child(4)::before {
+  content: "";
+  width: 25%;
+  height: 85%;
+  background-color: var(--secondary-color);
+  position: absolute;
+  top: 8%;
+  right: 15%;
+  z-index: -1;
+}
+.icon-2 {
+  margin-top: 45px;
+  color: var(--main-color);
+  font-size: 32px;
+}
+.services-sec span:nth-child(2) {
+  font-size: 19px;
+  font-weight: 700;
+  margin-left: 15px;
+}
+.services-sec p:nth-child(3) {
+  width: 80%;
+  line-height: 26px;
+  color: #444444;
+  margin-top: 15px;
+  margin-left: 55px;
+}
+/* End Services Section */
+/* Start Portfolio Section */
+.portfolio-sec {
+  height: 98vh;
+  display: inline-flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+  background-color: var(--background-color);
+  position: relative;
+}
+.portfolio-sec div:first-child {
+  width: 100%;
+  height: 35%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+}
+.portfolio-sec div:first-child .head-sec {
+  position: absolute;
+  top: 8%;
+}
+.portfolio-sec div:first-child .head-paragraph {
+  position: absolute;
+  top: 20%;
+  left: 38.8%;
+}
+.portfolio-sec .portfolio-inform {
+  width: calc((100% / 3) - 150px);
+  height: 55%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  line-height: 26px;
+  margin-left: 30px;
+}
+.portfolio-sec .portfolio-inform h2 {
+  padding-left: 15px;
+}
+.portfolio-sec .portfolio-inform p {
+  color: var(--paragraph-color);
+  padding: 0 0 25px 20px;
+}
+.portfolio-sec img {
+  width: 100%;
+  height: 60%;
+}
+/* End Portfolio Section */
+/* Start About Section */
+.about-sec {
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+.about-sec div:nth-child(1) {
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.about-sec div:nth-child(1) p {
+  position: absolute;
+  top: 62%;
+  left: 44%;
+}
+.about-sec div:nth-child(2) {
+  width: 45%;
+  height: 70%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+}
+.about-sec img {
+  width: 38%;
+  height: 77%;
+}
+.about-sec div:nth-child(2)::before {
+  content: "";
+  width: 15%;
+  height: 95%;
+  background-color: var(--head-lines);
+  position: absolute;
+  top: -8%;
+  left: 28%;
+  z-index: -1;
+}
+/* .about-sec div:nth-child(2)::after {
+  content: "L";
+  font-size: 600px;
+  font-weight: bolder;
+  color: var(--main-color);
+  position: absolute;
+  top: -35%;
+  right: 10%;
+  z-index: -1;
+} */
+.about-sec div:nth-child(2)::after {
+  content: "";
+  width: 15%;
+  height: 60%;
+  background-color: transparent;
+  border-left: 75px solid var(--main-color);
+  border-bottom: 85px solid var(--main-color);
+  position: absolute;
+  top: -8%;
+  right: 12%;
+  z-index: -1;
+}
+.about-sec div:nth-child(3) {
+  width: 42%;
+  height: 50%;
+  display: inline-flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+}
+.about-sec div:nth-child(3) p:first-child {
+  font-weight: 700;
+  line-height: 32px;
+}
+.about-sec div:nth-child(3) p:last-child {
+  color: var(--paragraph-color);
+  line-height: 32px;
+}
+.about-sec div:nth-child(3) hr {
+  width: 50%;
+  border-top: 1px solid #09766B;
+  border-bottom: 1px solid var(--main-color);
+}
+/* End About Section */
+/* Start Contact Section */
+.contact-sec {
+  height: 72vh;
+  background-color: var(--background-color);
+  text-align: center;
+  position: relative;
+}
+.contact-sec .head-sec {
+  display: block;
+  padding-top: 50px;
+}
+.contact-sec .head-paragraph {
+  position: absolute;
+  top: 26%;
+  left: 41.5%;
+}
+.contact-sec p:nth-child(3) {
+  color: var(--secondary-color);
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  margin-top: 70px;
+}
+.contact-sec a {
+  display: block;
+  text-decoration: none;
+  color: var(--main-color);
+  font-size: 35px;
+  font-weight: 800;
+  margin-top: 20px;
+}
+.contact-sec p:nth-child(5) {
+  display: inline-block;
+  margin-top: 20px;
+}
+/* End Contact Section */
+/* Start Footer */
+footer {
+  height: 11vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  font-size: 18px;
+}
+footer span {
+  color: var(--main-color);
+  font-weight: 700;
+}
+/* End Footer */
